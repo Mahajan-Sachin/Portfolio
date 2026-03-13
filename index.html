@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sachin Mahajan | AI/ML Engineer</title>
+  <meta name="description"
+    content="Sachin Mahajan – AI/ML-focused CS student building production-ready ML and LLM applications." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">Sachin <span class="accent">Mahajan</span></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#certificates" class="nav-link">Certificates</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#achievements" class="nav-link">Achievements</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section id="home" class="hero">
+    <div class="hero-bg">
+      <div class="grid-overlay"></div>
+      <div id="particles"></div>
+    </div>
+    <div class="hero-content container">
+      <div class="hero-text">
+
+        <h1 class="hero-name">Sachin <span class="accent">Mahajan</span></h1>
+        <p class="hero-role">AI/ML Engineer &amp; CS Student</p>
+        <p class="hero-sub">Building production-ready ML &amp; LLM applications &nbsp;·&nbsp; RAG Systems &nbsp;·&nbsp;
+          Backend Deployment</p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-contact"><i class="fas fa-paper-plane"></i> Contact Me</a>
+          <button onclick="openResumeModal()" class="btn btn-resume"><i class="fas fa-scroll"></i> Resume</button>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/Mahajan-Sachin" target="_blank" class="soc-icon" aria-label="GitHub"><i
+              class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/sachin-mahajan-cse/" target="_blank" class="soc-icon"
+            aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:sachinmahajan903@gmail.com" class="soc-icon" aria-label="Email"><i
+              class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="hero-img-wrap">
+        <div class="img-glow"></div>
+        <img src="images/profile/profile.png" alt="Sachin Mahajan" class="profile-img" />
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-bar"></div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="sec-header reveal">
+        <h2 class="sec-title">Who Am I?</h2>
+      </div>
+      <div class="about-grid reveal">
+        <div class="about-text">
+          <p>AI/ML-focused Computer Science student at Lovely Professional University, building production-ready ML and
+            LLM applications. I have hands-on experience with RAG systems, data analytics, and backend deployment —
+            passionate about applying modern AI research to real-world systems.</p>
+          <p>From building conversational AI with memory architectures to deploying ML-powered web apps, I focus on
+            end-to-end solutions — from model development all the way to production.</p>
+          <div class="interests">
+            <h3>Career Interests</h3>
+            <div class="tags">
+              <span class="tag">🤖 Artificial Intelligence</span>
+              <span class="tag">🧠 Machine Learning</span>
+              <span class="tag">📚 LLMs &amp; RAG</span>
+              <span class="tag">📊 Data Science</span>
+              <span class="tag">📈 Data Analytics</span>
+              <span class="tag">⚙️ Backend Dev</span>
+              <span class="tag">🖥️ Software Dev (SDE)</span>
+              <span class="tag">🔬 AI Research</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-img-col">
+          <div class="about-img-wrap">
+            <img src="images/profile/profile.png" alt="Sachin Mahajan" class="about-img" />
+            <div class="about-img-border"></div>
+          </div>
+          <div class="stats-row">
+            <div class="stat"><span class="stat-n">4+</span><span class="stat-l">Projects</span></div>
+            <div class="stat"><span class="stat-n">300+</span><span class="stat-l">DSA Solved</span></div>
+            <div class="stat"><span class="stat-n">2</span><span class="stat-l">Certifications</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS ========== -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <div class="sec-header reveal">
+        <h2 class="sec-title">What I Work With</h2>
+      </div>
+
+      <div class="skills-block reveal">
+        <h3 class="cat-title"><i class="fas fa-laptop-code"></i> Technical Skills</h3>
+        <div class="skills-grid">
+          <div class="sk-card"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+          <div class="sk-card"><i class="devicon-tensorflow-original colored"></i><span>TensorFlow</span></div>
+          <div class="sk-card"><i class="devicon-pytorch-original colored"></i><span>PyTorch</span></div>
+          <div class="sk-card"><i class="devicon-keras-plain colored"></i><span>Keras</span></div>
+          <div class="sk-card"><i class="devicon-scikitlearn-plain colored"></i><span>Scikit-Learn</span></div>
+          <div class="sk-card"><i class="devicon-django-plain colored"></i><span>Django</span></div>
+          <div class="sk-card"><i class="devicon-flask-original colored"></i><span>Flask</span></div>
+          <div class="sk-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"
+              class="sk-img" alt="Pandas" /><span>Pandas</span></div>
+          <div class="sk-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
+              class="sk-img" alt="NumPy" /><span>NumPy</span></div>
+          <div class="sk-card"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+          <div class="sk-card"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+          <div class="sk-card"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+          <div class="sk-card"><i class="devicon-github-original colored"></i><span>GitHub Actions</span></div>
+          <div class="sk-card"><i class="devicon-linux-plain colored"></i><span>Linux</span></div>
+          <!-- LangChain — official GitHub org avatar -->
+          <div class="sk-card"><img src="https://avatars.githubusercontent.com/u/126733545?s=96" class="sk-img" alt="LangChain" /><span>LangChain</span></div>
+          <!-- RAG Systems — concept, no official logo -->
+          <div class="sk-card"><i class="fas fa-layer-group" style="color:#00d4ff;"></i><span>RAG Systems</span></div>
+          <!-- Groq — bolt icon in Groq brand orange -->
+          <div class="sk-card"><i class="fas fa-bolt" style="color:#F55036;"></i><span>Groq / LLaMA</span></div>
+          <!-- JAX — Google DeepMind project, use their logo -->
+          <div class="sk-card"><img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Google_JAX_logo.svg" class="sk-img" alt="JAX" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" /><i class="fab fa-google" style="display:none;color:#4285F4;font-size:1.9rem;"></i><span>JAX</span></div>
+          <!-- Power BI — chart icon in Power BI yellow -->
+          <div class="sk-card"><i class="fas fa-chart-pie" style="color:#F2C811;"></i><span>Power BI</span></div>
+          <!-- DSA — concept, use sitemap icon -->
+          <div class="sk-card"><i class="fas fa-sitemap" style="color:#a78bfa;"></i><span>DSA</span></div>
+        </div>
+      </div>
+
+      <div class="skills-block reveal">
+        <h3 class="cat-title"><i class="fas fa-brain"></i> Soft Skills</h3>
+        <div class="soft-grid">
+          <div class="soft-card"><i class="fas fa-lightbulb"></i><span>Problem Solving</span></div>
+          <div class="soft-card"><i class="fas fa-book-open"></i><span>Research Oriented</span></div>
+          <div class="soft-card"><i class="fas fa-rocket"></i><span>Fast Learner</span></div>
+          <div class="soft-card"><i class="fas fa-users"></i><span>Team Collaboration</span></div>
+          <div class="soft-card"><i class="fas fa-comments"></i><span>Communication</span></div>
+          <div class="soft-card"><i class="fas fa-clock"></i><span>Time Management</span></div>
+          <div class="soft-card"><i class="fas fa-cogs"></i><span>Attention to Detail</span></div>
+          <div class="soft-card"><i class="fas fa-sync-alt"></i><span>Adaptability</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="sec-header reveal">
+        <h2 class="sec-title">What I've Built</h2>
+      </div>
+      <div class="projects-grid">
+
+        <!-- AI Companion -->
+        <div class="proj-card reveal">
+          <div class="proj-img-wrap single">
+            <img src="images/projects/ai_companion.png" alt="AI Companion" onclick="openLightbox(this.src, this.alt)" />
+          </div>
+          <div class="proj-body">
+            <div class="proj-header">
+              <h3>AI Companion</h3>
+              <span class="proj-date">Feb – Mar 2026</span>
+            </div>
+            <p class="proj-sub">Retrieval-Augmented Conversational AI</p>
+            <ul class="proj-bullets">
+              <li>Built a context-aware conversational AI using a RAG pipeline that retrieves top 3 semantically
+                relevant memories per query.</li>
+              <li>Developed a Django chat interface with typing simulation, emotion detection, and real-time LLM
+                responses.</li>
+              <li>Designed hybrid memory combining short-term chat history with long-term vector storage for persistent
+                context.</li>
+            </ul>
+            <div class="tech-tags">
+              <span>Python</span><span>Django</span><span>LangChain</span><span>RAG</span><span>ChromaDB</span><span>Groq</span><span>PyTorch</span>
+            </div>
+            <div class="proj-links">
+              <a href="https://github.com/Mahajan-Sachin/ai_companion" target="_blank" class="pl-github"><i class="fab fa-github"></i> GitHub</a>
+              <span class="pl-demo disabled"><i class="fas fa-external-link-alt"></i> No Live Demo</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job Recommendation Engine -->
+        <div class="proj-card reveal">
+          <div class="proj-img-wrap slider-wrap">
+            <div class="slider-track" id="sl-job">
+              <div class="slide"><img src="images/projects/Skill_base_engine.png" alt="Job Engine - Core"
+                  onclick="openLightbox(this.src, this.alt, 'job')" /></div>
+              <div class="slide"><img src="images/projects/Skill_base_llm_2.png" alt="Job Engine - LLM"
+                  onclick="openLightbox(this.src, this.alt, 'job')" /></div>
+            </div>
+            <button class="sl-btn sl-prev" onclick="slide('sl-job',-1)"><i class="fas fa-chevron-left"></i></button>
+            <button class="sl-btn sl-next" onclick="slide('sl-job', 1)"><i class="fas fa-chevron-right"></i></button>
+            <div class="sl-dots" id="dots-sl-job">
+              <span class="dot active" onclick="goSlide('sl-job',0)"></span>
+              <span class="dot" onclick="goSlide('sl-job',1)"></span>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-header">
+              <h3>Job Recommendation Engine</h3>
+              <span class="proj-date">Dec 2025 – Jan 2026</span>
+            </div>
+            <p class="proj-sub">Skill-Based LLM-Assisted Recommender</p>
+            <ul class="proj-bullets">
+              <li>Designed DSA-driven scoring engine matching 10+ job roles against user skills with computed relevance
+                scores.</li>
+              <li>Built SQL-backed skill matching with MySQL and 50+ in-memory mappings for reliable cloud deployment.
+              </li>
+              <li>Deployed on Render via Gunicorn with GitHub Actions CI/CD, exposing 4 RESTful APIs publicly.</li>
+            </ul>
+            <div class="tech-tags">
+              <span>Python</span><span>Flask</span><span>MySQL</span><span>Groq LLM</span><span>REST
+                API</span><span>Gunicorn</span><span>Render</span>
+            </div>
+            <div class="proj-links">
+              <a href="https://github.com/Mahajan-Sachin/Skill-matcher" target="_blank" class="pl-github"><i class="fab fa-github"></i> GitHub</a>
+              <a href="https://skill-matcher-t1az.onrender.com/" target="_blank" class="pl-demo"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phishing URL Detection -->
+        <div class="proj-card reveal">
+          <div class="proj-img-wrap slider-wrap">
+            <div class="slider-track" id="sl-phish">
+              <div class="slide"><img src="images/projects/Phishing.png" alt="Phishing - Main"
+                  onclick="openLightbox(this.src, this.alt, 'phish')" /></div>
+              <div class="slide"><img src="images/projects/Phishing2.png" alt="Phishing - Results"
+                  onclick="openLightbox(this.src, this.alt, 'phish')" /></div>
+            </div>
+            <button class="sl-btn sl-prev" onclick="slide('sl-phish',-1)"><i class="fas fa-chevron-left"></i></button>
+            <button class="sl-btn sl-next" onclick="slide('sl-phish', 1)"><i class="fas fa-chevron-right"></i></button>
+            <div class="sl-dots" id="dots-sl-phish">
+              <span class="dot active" onclick="goSlide('sl-phish',0)"></span>
+              <span class="dot" onclick="goSlide('sl-phish',1)"></span>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-header">
+              <h3>Phishing URL Detector</h3>
+              <span class="proj-date">Oct – Nov 2025</span>
+            </div>
+            <p class="proj-sub">ML-Based Cybersecurity Tool</p>
+            <ul class="proj-bullets">
+              <li>Engineered XGBoost phishing detector on 11,000+ URLs with 58 features, containerized with Docker.</li>
+              <li>Built Streamlit web app for real-time URL analysis with prediction confidence scores and clean UI.
+              </li>
+              <li>Implemented 15+ commit Git workflow with GitHub Actions CI validating builds on every push.</li>
+            </ul>
+            <div class="tech-tags">
+              <span>Python</span><span>XGBoost</span><span>Scikit-learn</span><span>Streamlit</span><span>Docker</span><span>GitHub
+                Actions</span>
+            </div>
+            <div class="proj-links">
+              <a href="https://github.com/Mahajan-Sachin/Phishing" target="_blank" class="pl-github"><i class="fab fa-github"></i> GitHub</a>
+              <a href="https://phishing-mvoeaygcs3bwqcmwtpi3hn.streamlit.app/" target="_blank" class="pl-demo"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Customer Shopping Behavior -->
+        <div class="proj-card reveal">
+          <div class="proj-img-wrap single">
+            <img src="images/projects/shopping.png" alt="Shopping Behavior Analysis"
+              onclick="openLightbox(this.src, this.alt)" />
+          </div>
+          <div class="proj-body">
+            <div class="proj-header">
+              <h3>Shopping Behavior Analysis</h3>
+              <span class="proj-date">Jan 2026</span>
+            </div>
+            <p class="proj-sub">Customer Analytics &amp; Power BI Dashboard</p>
+            <ul class="proj-bullets">
+              <li>Analyzed 3,900+ retail transactions in Python and SQL to evaluate revenue drivers and customer
+                segments.</li>
+              <li>Built Power BI dashboard with KPI cards and slicers for dynamic exploration of sales and demographics.
+              </li>
+              <li>Identified non-subscribed customers driving 60% of revenue and products with 60% discount-dependent
+                sales.</li>
+            </ul>
+            <div class="tech-tags">
+              <span>Python</span><span>Pandas</span><span>SQL</span><span>PostgreSQL</span><span>Power BI</span>
+            </div>
+            <div class="proj-links">
+              <a href="https://github.com/Mahajan-Sachin/Customer_Behavior" target="_blank" class="pl-github"><i class="fab fa-github"></i> GitHub</a>
+              <a href="https://app.powerbi.com/groups/me/reports/f9d9d277-0d5f-45a0-b8cb-df6c37415aef/1a10d2c0ce0a9523b033?experience=power-bi" target="_blank" class="pl-demo"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CERTIFICATES ========== -->
+  <section id="certificates" class="section section-alt">
+    <div class="container">
+      <div class="sec-header reveal">
+        <h2 class="sec-title">Certifications</h2>
+      </div>
+      <div class="certs-grid">
+
+        <div class="cert-card reveal">
+          <div class="cert-inner">
+            <div class="cert-front">
+              <img src="images/certificates/Hackerrank.png" alt="HackerRank SQL Certificate" />
+              <div class="cert-shine"></div>
+            </div>
+            <div class="cert-back">
+              <i class="fab fa-hackerrank cert-ico"></i>
+              <h3>HackerRank SQL</h3>
+              <p>Intermediate SQL Certification — complex queries, joins, aggregations &amp; database operations.</p>
+              <a href="images/certificates/Hackerrank.png" target="_blank" class="btn btn-primary">View Certificate</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-inner">
+            <div class="cert-front">
+              <img src="images/certificates/oracle.png" alt="Oracle AI Certificate" />
+              <div class="cert-shine"></div>
+            </div>
+            <div class="cert-back">
+              <i class="fas fa-cloud cert-ico"></i>
+              <h3>Oracle Cloud AI 2025</h3>
+              <p>Oracle Cloud Infrastructure AI Foundations Associate (1Z0-1122-25) — cloud AI fundamentals &amp; OCI
+                services.</p>
+              <a href="images/certificates/oracle.png" target="_blank" class="btn btn-primary">View Certificate</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EDUCATION ========== -->
+  <section id="education" class="section">
+    <div class="container">
+      <div class="sec-header reveal">
+        <h2 class="sec-title">Academic Journey</h2>
+      </div>
+      <div class="timeline">
+
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <span class="tl-date">Aug 2023 – Present</span>
+            <h3>B.Tech — Computer Science &amp; Engineering</h3>
+            <h4>Lovely Professional University, Jalandhar, Punjab</h4>
+            <p class="tl-major">Specialization: Artificial Intelligence &amp; Machine Learning</p>
+            <div class="tl-badge"><i class="fas fa-graduation-cap"></i> CGPA: 7.54 / 10</div>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <span class="tl-date">Aug 2021 – Aug 2022</span>
+            <h3>Intermediate (Class XII)</h3>
+            <h4>New Happy Public School, Yamuna Nagar, Haryana</h4>
+            <div class="tl-badge"><i class="fas fa-star"></i> Percentage: 93.2%</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ACHIEVEMENTS ========== -->
+  <section id="achievements" class="section section-alt">
+    <div class="container">
+      <div class="sec-header reveal">
+        <h2 class="sec-title">Milestones</h2>
+      </div>
+      <div class="ach-grid">
+        <div class="ach-card reveal">
+          <div class="ach-icon"><i class="fas fa-code"></i></div>
+          <h3>300+ DSA Problems Solved</h3>
+          <p>Consistently solved problems across arrays, graphs, trees, hashing &amp; strings on LeetCode and
+            GeeksForGeeks.</p>
+        </div>
+        <div class="ach-card reveal">
+          <div class="ach-icon"><i class="fab fa-hackerrank"></i></div>
+          <h3>HackerRank SQL Certified</h3>
+          <p>Earned Intermediate SQL certification demonstrating strong database query and design skills.</p>
+        </div>
+        <div class="ach-card reveal">
+          <div class="ach-icon"><i class="fas fa-cloud"></i></div>
+          <h3>Oracle Cloud AI Associate</h3>
+          <p>Passed Oracle Cloud Infrastructure 2025 AI Foundations Associate exam (1Z0-1122-25).</p>
+        </div>
+        <div class="ach-card reveal">
+          <div class="ach-icon"><i class="fas fa-rocket"></i></div>
+          <h3>Production ML Deployments</h3>
+          <p>Deployed multiple ML applications to production using Render, Docker, and GitHub Actions CI/CD pipelines.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="sec-header reveal">
+        <h2 class="sec-title">Get In Touch</h2>
+        <p class="sec-desc">Open to opportunities, collaborations &amp; conversations. Let's connect!</p>
+      </div>
+      <div class="contact-grid reveal">
+        <a href="tel:+918168959421" class="contact-card">
+          <div class="cc-icon"><i class="fas fa-phone"></i></div>
+          <span class="cc-type">Phone</span>
+          <span class="cc-val">+91 8168959421</span>
+        </a>
+        <a href="mailto:sachinmahajan903@gmail.com" class="contact-card">
+          <div class="cc-icon"><i class="fas fa-envelope"></i></div>
+          <span class="cc-type">Email</span>
+          <span class="cc-val">sachinmahajan903@gmail.com</span>
+        </a>
+        <a href="https://www.linkedin.com/in/sachin-mahajan-cse/" target="_blank" class="contact-card">
+          <div class="cc-icon"><i class="fab fa-linkedin"></i></div>
+          <span class="cc-type">LinkedIn</span>
+          <span class="cc-val">sachin-mahajan-cse</span>
+        </a>
+        <a href="https://github.com/Mahajan-Sachin" target="_blank" class="contact-card">
+          <div class="cc-icon"><i class="fab fa-github"></i></div>
+          <span class="cc-type">GitHub</span>
+          <span class="cc-val">Mahajan-Sachin</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">Sachin <span class="accent">Mahajan</span></div>
+      <p>Designed &amp; Built by <span class="accent">Sachin Mahajan</span></p>
+      <p class="footer-sub">AI/ML Engineer &nbsp;·&nbsp; CS Student &nbsp;·&nbsp; Open to Opportunities</p>
+    </div>
+  </footer>
+
+  <!-- ========== RESUME MODAL ========== -->
+  <div id="resume-modal" class="resume-modal">
+    <div class="rm-overlay" onclick="closeResumeModal()"></div>
+    <div class="rm-content">
+      <div class="rm-header">
+        <div class="rm-title"><i class="fas fa-file-pdf"></i> Sachin Mahajan — Resume</div>
+        <div class="rm-actions">
+          <a href="resume/SachinResume2.pdf" download class="btn btn-primary"><i class="fas fa-download"></i> Download</a>
+          <button onclick="closeResumeModal()" class="rm-close" aria-label="Close"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <iframe src="resume/SachinResume2.pdf" class="rm-frame" title="Sachin Mahajan Resume"></iframe>
+    </div>
+  </div>
+
+  <!-- ========== LIGHTBOX ========== -->
+  <div id="lightbox" class="lightbox">
+    <button class="lb-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
+    <button class="lb-nav lb-prev" id="lb-prev" onclick="lbNavigate(-1)"><i class="fas fa-chevron-left"></i></button>
+    <img id="lb-img" src="" alt="" onclick="closeLightbox()" />
+    <button class="lb-nav lb-next" id="lb-next" onclick="lbNavigate(1)"><i class="fas fa-chevron-right"></i></button>
+    <p class="lb-hint" id="lb-hint">Click image to close</p>
+  </div>
+
+  <script src="script.js"></script>
+
+  <!-- ========== CHATBOT ========== -->
+  <div id="chatbot" class="chatbot-wrap">
+    <!-- Toggle button -->
+    <button class="chat-toggle" id="chatToggle" onclick="toggleChat()" aria-label="Open AI Assistant">
+      <span class="chat-toggle-icon"><i class="fas fa-robot"></i></span>
+      <span class="chat-toggle-pulse"></span>
+    </button>
+
+    <!-- Chat window -->
+    <div class="chat-window" id="chatWindow">
+      <div class="chat-header">
+        <div class="chat-avatar"><i class="fas fa-robot"></i></div>
+        <div class="chat-header-text">
+          <span class="chat-name">Sachin's AI Assistant</span>
+          <span class="chat-status"><span class="status-dot"></span> Online</span>
+        </div>
+        <button class="chat-close" onclick="toggleChat()"><i class="fas fa-times"></i></button>
+      </div>
+
+      <div class="chat-messages" id="chatMessages"></div>
+
+      <div class="chat-chips" id="chatChips">
+        <button onclick="sendChip('about')">👤 About Sachin</button>
+        <button onclick="sendChip('skills')">🛠️ Skills</button>
+        <button onclick="sendChip('projects')">🚀 Projects</button>
+        <button onclick="sendChip('contact')">📬 Contact</button>
+        <button onclick="sendChip('education')">🎓 Education</button>
+        <button onclick="sendChip('achievements')">🏆 Achievements</button>
+        <button onclick="sendChip('resume')">📜 Resume</button>
+        <button onclick="sendChip('hiring')">💼 Is he available?</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
