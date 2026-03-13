@@ -245,11 +245,12 @@ function initSkillCardAnimations() {
     (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
+
           cards.forEach((card, i) => {
-            setTimeout(() => {
-              card.classList.add('sk-visible');
-            }, i * 60); // 60ms stagger between each card
+            card.style.transitionDelay = `${i * 60}ms`;
+            card.classList.add('sk-visible');
           });
+
           observer.unobserve(entry.target);
         }
       });
