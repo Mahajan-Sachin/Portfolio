@@ -530,7 +530,12 @@
         <button onclick="sendChip('education')">🎓 Education</button>
         <button onclick="sendChip('achievements')">🏆 Achievements</button>
         <button onclick="sendChip('resume')">📜 Resume</button>
-        <button onclick="sendChip('hiring')">💼 Is he available?</button>
+        <button onclick="sendChip('hire')">💼 Is he available?</button>
+      </div>
+
+      <div class="chat-input-row">
+        <input type="text" id="chatInput" placeholder="Ask me anything…" onkeydown="if(event.key==='Enter') sendMessage()" autocomplete="off" />
+        <button onclick="sendMessage()" class="chat-send" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
       </div>
     </div>
   </div>

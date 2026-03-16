@@ -393,9 +393,13 @@ function initChatbot() {
 }
 
 function getBotReply(input) {
-  const text = input.toLowerCase();
+  const text = input.toLowerCase().trim();
   for (const r of botResponses) {
-    if (r.keys.some(k => new RegExp(`\\b${k.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}\\b`,'i').test(text) || text === k)) return r.reply;
+    if (r.keys.some(k => {
+      const escaped = k.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+      // Try exact word-boundary match first, then prefix/substring match for stems
+      return new RegExp(`\\b${escaped}`,'i').test(text) || text === k;
+    })) return r.reply;
   }
   return fallbackReplies[fallbackIdx++ % fallbackReplies.length];
 }
