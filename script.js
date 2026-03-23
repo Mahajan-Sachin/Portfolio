@@ -239,26 +239,44 @@ function initSkillCardAnimations() {
   const skillsSection = document.getElementById('skills');
   if (!skillsSection) return;
 
-  const cards = skillsSection.querySelectorAll('.sk-card');
-
-  const observer = new IntersectionObserver(
+  // Observe each sk-card individually — animation fires when each card enters view
+  const cardObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-
-          cards.forEach((card, i) => {
-            card.style.transitionDelay = `${i * 60}ms`;
-            card.classList.add('sk-visible');
-          });
-
-          observer.unobserve(entry.target);
+          entry.target.classList.add('sk-visible');
+          cardObserver.unobserve(entry.target);
         }
       });
     },
     { threshold: 0.1 }
   );
 
-  observer.observe(skillsSection);
+  skillsSection.querySelectorAll('.sk-card').forEach((card, i) => {
+    card.style.animationDelay = `${i * 60}ms`;  // stagger via animation-delay
+    cardObserver.observe(card);
+  });
+
+  // Animate soft-skill cards with slide-in
+  const softObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateX(0)';
+          softObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  skillsSection.querySelectorAll('.soft-card').forEach((card, i) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateX(-18px)';
+    card.style.transition = `opacity 0.4s ease ${i * 60}ms, transform 0.4s ease ${i * 60}ms`;
+    softObserver.observe(card);
+  });
 }
 
 // ======== INIT ========
