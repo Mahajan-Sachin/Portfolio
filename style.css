@@ -372,6 +372,44 @@ img { max-width: 100%; display: block; }
 .pl-demo.disabled { opacity: 0.45; cursor: not-allowed; pointer-events: none; }
 
 /* ============================================
+   GITHUB
+   ============================================ */
+.github-stats { display: flex; flex-direction: column; align-items: center; gap: 2rem; }
+
+.gh-cards-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 900px;
+}
+.gh-card {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 24px rgba(0,212,255,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gh-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,212,255,0.25); }
+
+.gh-streak-wrap { display: flex; justify-content: center; width: 100%; }
+.gh-streak {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 24px rgba(0,212,255,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gh-streak:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,212,255,0.25); }
+
+.gh-cta { display: flex; justify-content: center; }
+
+@media (max-width: 640px) {
+  .gh-cards-row { grid-template-columns: 1fr; }
+}
+
+/* ============================================
    CERTIFICATES
    ============================================ */
 .certs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 860px; margin: 0 auto; }
