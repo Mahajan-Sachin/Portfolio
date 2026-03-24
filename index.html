@@ -331,24 +331,64 @@
     <div class="container">
       <div class="sec-header reveal">
         <h2 class="sec-title"><i class="fab fa-github" style="margin-right:0.5rem;"></i>GitHub Activity</h2>
+        <p class="sec-desc">Real-time data fetched from the official GitHub API</p>
       </div>
       <div class="github-stats reveal">
 
-        <!-- Stats + Languages row -->
+        <!-- ── Live GitHub Stats Bar ── -->
+        <div class="gh-live-stats" id="ghLiveStats">
+          <div class="gh-stat-card">
+            <i class="fas fa-code-branch"></i>
+            <span class="gh-stat-num" id="ghRepos">—</span>
+            <span class="gh-stat-label">Public Repos</span>
+          </div>
+          <div class="gh-stat-card">
+            <i class="fas fa-star"></i>
+            <span class="gh-stat-num" id="ghStars">—</span>
+            <span class="gh-stat-label">Total Stars</span>
+          </div>
+          <div class="gh-stat-card">
+            <i class="fas fa-users"></i>
+            <span class="gh-stat-num" id="ghFollowers">—</span>
+            <span class="gh-stat-label">Followers</span>
+          </div>
+          <div class="gh-stat-card">
+            <i class="fas fa-user-plus"></i>
+            <span class="gh-stat-num" id="ghFollowing">—</span>
+            <span class="gh-stat-label">Following</span>
+          </div>
+        </div>
+
+        <!-- ── Top Original Projects (API-driven, no forks) ── -->
+        <div class="gh-section-label">
+          <i class="fas fa-folder-open"></i> Top Original Projects
+          <span class="gh-label-note">(forked repos excluded)</span>
+        </div>
+        <div class="gh-repos-grid" id="ghReposGrid">
+          <div class="gh-repo-skeleton"></div>
+          <div class="gh-repo-skeleton"></div>
+          <div class="gh-repo-skeleton"></div>
+          <div class="gh-repo-skeleton"></div>
+        </div>
+
+        <!-- ── Stats + Languages row ── -->
+        <div class="gh-section-label" style="margin-top:2.5rem;">
+          <i class="fas fa-chart-bar"></i> Language Breakdown &amp; Activity
+        </div>
         <div class="gh-cards-row">
+          <img
+            src="https://github-readme-stats.vercel.app/api/top-langs/?username=Mahajan-Sachin&layout=compact&hide_border=false&bg_color=0a0f1e&border_color=00d4ff&title_color=00d4ff&text_color=e2e8f0&langs_count=8&exclude_repo=transformers,pandas,numpy,scikit-learn,keras,pytorch,tensorflow"
+            alt="Top Languages"
+            class="gh-card reveal"
+          />
           <img
             src="https://github-readme-stats.vercel.app/api?username=Mahajan-Sachin&show_icons=true&count_private=true&hide_border=false&bg_color=0a0f1e&border_color=00d4ff&title_color=00d4ff&text_color=e2e8f0&icon_color=7c3aed"
             alt="Sachin's GitHub Stats"
             class="gh-card reveal"
           />
-          <img
-            src="https://github-readme-stats.vercel.app/api/top-langs/?username=Mahajan-Sachin&layout=compact&hide_border=false&bg_color=0a0f1e&border_color=00d4ff&title_color=00d4ff&text_color=e2e8f0&langs_count=8"
-            alt="Top Languages"
-            class="gh-card reveal"
-          />
         </div>
 
-        <!-- Streak -->
+        <!-- ── Streak ── -->
         <div class="gh-streak-wrap reveal">
           <img
             src="https://streak-stats.demolab.com?user=Mahajan-Sachin&theme=dark&background=0a0f1e&border=00d4ff&ring=00d4ff&fire=7c3aed&currStreakLabel=00d4ff&sideLabels=e2e8f0&dates=94a3b8&sideNums=e2e8f0&currStreakNum=00d4ff"
@@ -357,7 +397,20 @@
           />
         </div>
 
-        <!-- CTA -->
+        <!-- ── Contribution Graph ── -->
+        <div class="gh-section-label" style="margin-top:2.5rem;">
+          <i class="fas fa-calendar-alt"></i> Contribution Activity
+        </div>
+        <div class="gh-contrib-wrap reveal">
+          <img
+            src="https://ghchart.rshah.org/00d4ff/Mahajan-Sachin"
+            alt="GitHub Contribution Graph"
+            class="gh-contrib-graph"
+            onerror="this.parentElement.innerHTML='<p class=\'gh-contrib-fallback\'>View contributions on <a href=\'https://github.com/Mahajan-Sachin\' target=\'_blank\'>GitHub</a></p>'"
+          />
+        </div>
+
+        <!-- ── CTA ── -->
         <div class="gh-cta reveal">
           <a href="https://github.com/Mahajan-Sachin" target="_blank" class="btn btn-primary">
             <i class="fab fa-github"></i> View All Repositories

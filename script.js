@@ -299,6 +299,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.scrollY > 50) navbar.classList.add('scrolled');
   // Chatbot
   initChatbot();
+  // GitHub live data
+  loadGitHubData();
 });
 
 // ======== CHATBOT ========
@@ -473,5 +475,121 @@ function sendChip(text) {
   appendUserMsg(text);
   const typing = showTyping();
   setTimeout(() => { typing.remove(); appendBotMsg(getBotReply(text)); }, 700);
+}
+
+
+// ======== GITHUB API INTEGRATION ========
+async function loadGitHubData() {
+  const GH_USER = 'Mahajan-Sachin';
+  const API_BASE = 'https://api.github.com';
+
+  // Animated count-up
+  function countUp(el, target, duration = 900) {
+    if (!el) return;
+    if (target === 0) { el.textContent = '0'; return; }
+    const start = performance.now();
+    const step = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      el.textContent = Math.round(progress * target);
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target;
+    };
+    requestAnimationFrame(step);
+  }
+
+  // Fetch all pages of repos (pagination-safe, up to 500 repos)
+  async function fetchAllRepos() {
+    let repos = [];
+    let page = 1;
+    while (page <= 5) {
+      const res = await fetch(
+        `${API_BASE}/users/${GH_USER}/repos?per_page=100&page=${page}&type=owner`,
+        { headers: { 'Accept': 'application/vnd.github.v3+json' } }
+      );
+      if (!res.ok) break;
+      const data = await res.json();
+      repos = repos.concat(data);
+      if (data.length < 100) break;
+      page++;
+    }
+    return repos;
+  }
+
+  try {
+    // Fetch user profile
+    const userRes = await fetch(`${API_BASE}/users/${GH_USER}`, {
+      headers: { 'Accept': 'application/vnd.github.v3+json' }
+    });
+    if (!userRes.ok) throw new Error('GitHub user API failed');
+    const user = await userRes.json();
+
+    // Fetch all repos → exclude forks → sum stars
+    const allRepos = await fetchAllRepos();
+    const originalRepos = allRepos.filter(r => !r.fork);
+    const totalStars = originalRepos.reduce((sum, r) => sum + (r.stargazers_count || 0), 0);
+
+    // Populate stat cards
+    countUp(document.getElementById('ghRepos'),     user.public_repos);
+    countUp(document.getElementById('ghStars'),     totalStars);
+    countUp(document.getElementById('ghFollowers'), user.followers);
+    countUp(document.getElementById('ghFollowing'), user.following);
+
+    // Language colour map
+    const langColors = {
+      Python: '#3572A5', JavaScript: '#f1e05a', HTML: '#e34c26',
+      CSS: '#563d7c', Java: '#b07219', 'Jupyter Notebook': '#DA5B0B',
+      TypeScript: '#2b7489', C: '#555555', 'C++': '#f34b7d',
+      Shell: '#89e051', SQL: '#e38c00'
+    };
+
+    // Top 6 original repos by stars → then by recency
+    const topRepos = originalRepos
+      .sort((a, b) =>
+        b.stargazers_count - a.stargazers_count ||
+        new Date(b.updated_at) - new Date(a.updated_at)
+      )
+      .slice(0, 6);
+
+    const grid = document.getElementById('ghReposGrid');
+    if (!grid) return;
+
+    grid.innerHTML = topRepos.map(repo => {
+      const lang  = repo.language || 'N/A';
+      const color = langColors[lang] || '#00d4ff';
+      const rawDesc = repo.description || 'No description provided.';
+      const desc  = rawDesc.length > 72 ? rawDesc.slice(0, 72) + '…' : rawDesc;
+      const updated = new Date(repo.updated_at).toLocaleDateString('en-IN', { month: 'short', year: 'numeric' });
+      return `
+        <a class="gh-repo-card" href="${repo.html_url}" target="_blank" rel="noopener noreferrer">
+          <div class="gh-repo-top">
+            <span class="gh-repo-name"><i class="fas fa-book-open"></i> ${repo.name}</span>
+          </div>
+          <p class="gh-repo-desc">${desc}</p>
+          <div class="gh-repo-meta">
+            <span class="gh-repo-lang">
+              <span class="lang-dot" style="background:${color}"></span>${lang}
+            </span>
+            <span class="gh-repo-stars"><i class="fas fa-star"></i> ${repo.stargazers_count}</span>
+            <span class="gh-repo-forks"><i class="fas fa-code-branch"></i> ${repo.forks_count}</span>
+            <span class="gh-repo-updated">Updated ${updated}</span>
+          </div>
+        </a>`;
+    }).join('');
+
+  } catch (err) {
+    // Graceful error — never guess, never fake numbers
+    ['ghRepos','ghStars','ghFollowers','ghFollowing'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = '—';
+    });
+    const grid = document.getElementById('ghReposGrid');
+    if (grid) grid.innerHTML = `
+      <p class="gh-api-error">
+        <i class="fas fa-exclamation-triangle"></i>
+        Unable to load repos.
+        <a href="https://github.com/Mahajan-Sachin" target="_blank">View on GitHub →</a>
+      </p>`;
+    console.warn('GitHub API error:', err);
+  }
 }
 
